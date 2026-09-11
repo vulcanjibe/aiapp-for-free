@@ -1,48 +1,45 @@
 # 🏷️ Analyse de Marque & Disponibilité des Noms de Domaine
 
-Ce document analyse la pertinence du nom **"FreeHub"** et formule des recommandations stratégiques pour le nommage et la réservation du domaine de votre plateforme.
+Ce document analyse la pertinence des noms **"FreeHub"** et **"LibreHub"** et formule des recommandations stratégiques pour le nommage et la réservation du domaine de votre plateforme.
 
 ---
 
-## 🧐 1. Analyse du nom "FreeHub" & Mise à Jour de la Disponibilité
+## 🧐 1. Analyse Comparative des Noms
 
-### 🎯 Points forts :
+### A. **FreeHub**
 - **Clarté immédiate** : "Free" (gratuit) + "Hub" (plateforme/catalogue rassembleur).
 - **Facile à retenir** : Nom court, dynamique et universel.
 - **Évocateur** : S'inscrit dans la lignée de plateformes communautaires célèbres (*GitHub*, *DockerHub*, *PWAHub*).
 
----
-
-## 🌐 2. Disponibilité Réelle des Noms de Domaine pour "FreeHub"
-
-- ❌ **`freehub.fr`** : **Indisponible** (Déjà réservé).
-- ❌ **`freehub.app`** : **Indisponible** (Déjà réservé).
-- ❌ **`freehub.com`** : **Indisponible** (Propriété d'un courtier en nom de domaine).
-- ✅ **`freehub.store`** : **DISPONIBLE** (~2€ à 5€/an la première année sur Gandi / Namecheap / OVH).
-  - **Analyse de `freehub.store`** : Très bonne option car le terme *"store"* fait immédiatement penser à un magasin ou catalogue d'applications (type *App Store* / *Google Play Store*), ce qui renforce le positionnement de "Boutique / Catalogue d'Applications Gratuites" tout en restant ultra mémorisable.
-- ✅ **`freehub-community.org`** : **DISPONIBLE** (~12€/an). Option alternative orientée association / open-source non lucratif.
+### B. **LibreHub** (*Recommandation N°1 pour la France & l'Europe*)
+- **Noble & Rassurerant** : Fait référence explicite au **logiciel libre** ("Libre" au sens liberté et gratuité).
+- **Très valorisant pour le B2B / Entreprises** : "LibreHub" sonne immédiatement professionnel et éthique pour les TPE/PME cherchant à s'affranchir des SaaS propriétaires payants.
 
 ---
 
-## 💡 3. Alternatives de Noms de Marque Innovantes & Totalement Libres en `.fr` / `.app`
+## 🌐 2. Disponibilité Réelle des Noms de Domaine
 
-Si vous préférez absolument une extension `.fr` ou `.app` avec un nom de marque unique :
+### 📌 Option 1 : Conserver la marque **FreeHub**
+- ❌ **`freehub.fr`** : Indisponible.
+- ❌ **`freehub.app`** : Indisponible.
+- ❌ **`freehub.com`** : Indisponible (courtier).
+- ❌ **`freehub.store`** : Indisponible.
+- ✅ **`freehub.shop`** : **DISPONIBLE** (~2€/an).
+  - *Analyse* : "Shop" évoque le magasin / la boutique d'applications gratuites ("App Shop").
 
-### 1️⃣ **LibreHub** (*Recommandation N°1 pour le marché Français*)
-- **Extension disponible** : `librehub.fr` (~7€/an) & `librehub.app` (~14€/an).
-- **Pourquoi ?** Référence explicite au **logiciel libre** (terme noble et sécurisant en France et Europe).
+---
 
-### 2️⃣ **OpenAlt** (Open Alternatives)
-- **Extension disponible** : `openalt.fr` & `openalt.app`.
-- **Pourquoi ?** Référence directe aux alternatives Open Source.
-
-### 3️⃣ **FreeSwapp**
-- **Extension disponible** : `freeswapp.fr` & `freeswapp.com`.
-- **Pourquoi ?** Évoque l'action d'échanger/remplacer un logiciel payant par son alternative gratuite.
+### 📌 Option 2 : Adopter la marque **LibreHub** (*Recommandé*)
+- ✅ **`librehub.fr`** : **DISPONIBLE** (~7€/an sur OVH, Gandi, Infomaniak).
+  - *Analyse* : La meilleure option pour le marché français. Extension `.fr` gage de confiance.
+- ✅ **`librehub.store`** : **DISPONIBLE** (~2€/an).
+  - *Analyse* : Idéal pour un positionnement "Magasin / Hub d'applications libres".
+- ✅ **`librehub.app`** : **DISPONIBLE** (~14€/an).
+  - *Analyse* : Parfait car le TLD `.app` impose le HTTPS natif et cible les Web Apps / PWA.
 
 ---
 
 ## 🚀 Recommandation Finale pour le Lancement
 
-Si vous gardez le nom **FreeHub**, enregistrez immédiatement **`freehub.store`** (idéal pour remplacer les Stores payants).
-Si vous préférez du `.fr` / `.app`, privilégiez **`librehub.fr`** ou **`librehub.app`**.
+1. **Choix Prioritaire** : Enregistrer **`librehub.fr`** (et idéalement **`librehub.app`** ou **`librehub.store`** pour sécuriser la marque).
+2. **Choix Secondaire** : Si vous tenez au nom anglais **FreeHub**, enregistrer **`freehub.shop`**.
