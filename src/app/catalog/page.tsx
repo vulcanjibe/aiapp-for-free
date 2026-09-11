@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { Search, Layers, Database, ArrowRight, ShieldCheck, Sparkles, Filter, GitFork } from "lucide-react";
+import { Search, Layers, ArrowRight, ShieldCheck, Sparkles, Filter, GitFork } from "lucide-react";
 import { IAppStore } from "@/lib/store";
 
 const CATEGORIES = [
@@ -22,7 +22,6 @@ export default function CatalogPage() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Toutes");
-  const [selectedDb, setSelectedDb] = useState("Tous");
 
   const fetchApps = useCallback(async () => {
     setLoading(true);
@@ -49,17 +48,13 @@ export default function CatalogPage() {
 
   const filteredApps = apps.filter((app) => {
     const query = search.toLowerCase();
-    const matchesSearch =
+    return (
       app.title.toLowerCase().includes(query) ||
       app.replacedApp.toLowerCase().includes(query) ||
       app.tagline.toLowerCase().includes(query) ||
       app.description.toLowerCase().includes(query) ||
-      app.techStack.some((tech) => tech.toLowerCase().includes(query)) ||
-      app.features.some((feat) => feat.toLowerCase().includes(query));
-
-    const matchesDb = selectedDb === "Tous" || app.database === selectedDb;
-
-    return matchesSearch && matchesDb;
+      app.features.some((feat) => feat.toLowerCase().includes(query))
+    );
   });
 
   return (
@@ -74,42 +69,26 @@ export default function CatalogPage() {
           Trouvez une alternative gratuite à vos logiciels payants
         </h1>
         <p className="text-sm text-slate-400 max-w-3xl">
-          Recherchez par nom d&apos;application payante (ex: Notion, Trello, Figma, Slack, Strava...), par catégorie ou par fonctionnalité. Toutes les applications référencées sont sous licence open-source, tournent sous Docker et sont restreintes aux technologies Web / PWA.
+          Saisissez le nom du logiciel payant que vous utilisez (ex: Notion, Trello, Figma, Slack, Strava...) ou explorez par catégorie pour découvrir son équivalent 100% gratuit et sans abonnement.
         </p>
       </div>
 
       {/* Controls & Filters Bar */}
       <div className="space-y-4 bg-slate-900/80 p-5 rounded-2xl border border-slate-800 backdrop-blur-md">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Search Input */}
-          <div className="md:col-span-2 relative">
-            <Search className="w-5 h-5 absolute left-3.5 top-3 text-slate-500" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Rechercher par nom payant (Notion, Trello...), fonctionnalité ou stack..."
-              className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
-            />
-          </div>
-
-          {/* Database Filter */}
-          <div className="flex items-center gap-2">
-            <Database className="w-4 h-4 text-slate-400 shrink-0" />
-            <select
-              value={selectedDb}
-              onChange={(e) => setSelectedDb(e.target.value)}
-              className="w-full py-2.5 px-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-              <option value="Tous">Toutes BDD (MongoDB / PostgreSQL)</option>
-              <option value="MongoDB">MongoDB</option>
-              <option value="PostgreSQL">PostgreSQL</option>
-            </select>
-          </div>
+        {/* Search Input */}
+        <div className="relative">
+          <Search className="w-5 h-5 absolute left-3.5 top-3 text-slate-500" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Rechercher par nom de logiciel payant (Notion, Trello, Figma...) ou fonctionnalité..."
+            className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+          />
         </div>
 
         {/* Category Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pt-2 pb-1 text-xs">
+        <div className="flex items-center gap-2 overflow-x-auto pt-1 pb-1 text-xs">
           <Filter className="w-4 h-4 text-slate-500 shrink-0 mr-1" />
           {CATEGORIES.map((cat) => (
             <button
@@ -138,7 +117,7 @@ export default function CatalogPage() {
           <Sparkles className="w-10 h-10 text-slate-600 mx-auto" />
           <h3 className="text-lg font-bold text-white">Aucune application trouvée</h3>
           <p className="text-xs text-slate-400 max-w-md mx-auto">
-            Aucune application gratuite ne correspond à votre recherche pour le moment. Vous pouvez proposer une idée dans notre section dédiée !
+            Aucune application gratuite ne correspond à votre recherche pour le moment. Vous pouvez proposer cette idée à la communauté !
           </p>
           <Link
             href="/ideas"
@@ -158,7 +137,7 @@ export default function CatalogPage() {
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <span className="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20 mb-2">
-                      Alternative à : {app.replacedApp}
+                      Alternative gratuite à : {app.replacedApp}
                     </span>
                     <h3 className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">
                       {app.title}
@@ -183,7 +162,7 @@ export default function CatalogPage() {
                 {/* Features Badges */}
                 <div className="space-y-1">
                   <span className="text-[10px] uppercase tracking-wider font-bold text-slate-500">
-                    Fonctionnalités clés
+                    Fonctionnalités incluses
                   </span>
                   <div className="flex flex-wrap gap-1">
                     {app.features.slice(0, 3).map((f) => (
@@ -201,21 +180,6 @@ export default function CatalogPage() {
                     )}
                   </div>
                 </div>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1 pt-1">
-                  {app.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[10px] px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 font-medium">
-                    {app.database}
-                  </span>
-                </div>
               </div>
 
               <div className="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
@@ -227,7 +191,7 @@ export default function CatalogPage() {
                   href={`/app/${app.slug}`}
                   className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold transition-all flex items-center gap-1.5 shadow-md shadow-indigo-600/20"
                 >
-                  Fiche & Accès
+                  Accéder gratuitement
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

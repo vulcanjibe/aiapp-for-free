@@ -3,7 +3,7 @@ import { User } from "../models/User";
 import { App } from "../models/App";
 import { AppIdea } from "../models/AppIdea";
 import { CompanyQuoteRequest } from "../models/CompanyQuoteRequest";
-import { getStore, saveStore, IAppStore, IUserStore, IAppIdeaStore, ICompanyQuoteRequestStore } from "./store";
+import { getStore, saveStore, IAppStore, IUserStore, IAppIdeaStore, ICompanyQuoteRequestStore, ISiteAnalyticsStore } from "./store";
 
 async function checkMongoConnection(): Promise<boolean> {
   try {
@@ -12,6 +12,34 @@ async function checkMongoConnection(): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+// ANALYTICS SERVICES
+export async function trackPageView(path: string) {
+  const store = getStore();
+  if (!store.analytics) {
+    store.analytics = {
+      totalVisits: 0,
+      pageViews: {},
+      lastVisitedAt: new Date().toISOString(),
+    };
+  }
+  store.analytics.totalVisits = (store.analytics.totalVisits || 0) + 1;
+  store.analytics.pageViews[path] = (store.analytics.pageViews[path] || 0) + 1;
+  store.analytics.lastVisitedAt = new Date().toISOString();
+  saveStore(store);
+  return store.analytics;
+}
+
+export async function getSiteAnalytics(): Promise<ISiteAnalyticsStore> {
+  const store = getStore();
+  return (
+    store.analytics || {
+      totalVisits: 0,
+      pageViews: {},
+      lastVisitedAt: new Date().toISOString(),
+    }
+  );
 }
 
 // APP SERVICES

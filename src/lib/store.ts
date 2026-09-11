@@ -82,17 +82,34 @@ export interface ICompanyQuoteRequestStore {
   updatedAt: string;
 }
 
+export interface ISiteAnalyticsStore {
+  totalVisits: number;
+  pageViews: Record<string, number>;
+  lastVisitedAt: string;
+}
+
 export interface IDataStore {
   users: IUserStore[];
   apps: IAppStore[];
   ideas: IAppIdeaStore[];
   companyRequests: ICompanyQuoteRequestStore[];
+  analytics?: ISiteAnalyticsStore;
 }
 
-// BCRYPT HASHES for demo accounts password 'Password123!'
 const DEMO_PASSWORD_HASH = "$2a$10$iIAtM4g1/K2U8038A6A4nOTY5S.bVqK1k8R.2L42d93eJv1J/CqOq";
 
 const initialSeedData: IDataStore = {
+  analytics: {
+    totalVisits: 3840,
+    pageViews: {
+      "/": 1820,
+      "/catalog": 1240,
+      "/ideas": 420,
+      "/entreprise": 210,
+      "/developer": 150,
+    },
+    lastVisitedAt: new Date().toISOString(),
+  },
   users: [
     {
       _id: "usr_admin",
@@ -346,7 +363,6 @@ const initialSeedData: IDataStore = {
   ],
 };
 
-// Use /tmp directory on Serverless environments (like Vercel) where process.cwd() is read-only
 const DATA_FILE =
   process.env.VERCEL || process.env.NODE_ENV === "production"
     ? path.join("/tmp", "freehub-data-store.json")
