@@ -1,6 +1,6 @@
-# 🚀 Guide de Déploiement Gratuit sur Vercel (CI/CD) - FreeHub
+# 🚀 Guide de Déploiement Gratuit sur Vercel (CI/CD) & MongoDB - FreeHub
 
-Ce guide vous explique étape par étape comment déployer l'application **FreeHub** sur votre compte Vercel avec déploiement continu automatique (CI/CD) connecté à GitHub.
+Ce guide vous explique étape par étape comment déployer l'application **FreeHub** sur votre compte Vercel avec votre propre base de données **MongoDB Atlas**, le script de seed initial et le déploiement continu automatique (CI/CD).
 
 ---
 
@@ -8,11 +8,24 @@ Ce guide vous explique étape par étape comment déployer l'application **FreeH
 
 1. Un compte [GitHub](https://github.com)
 2. Un compte [Vercel](https://vercel.com)
-3. Un cluster MongoDB gratuit [MongoDB Atlas Free Tier - M0](https://www.mongodb.com/cloud/atlas) *(fortement recommandé pour la persistance globale)*.
+3. Un cluster MongoDB gratuit [MongoDB Atlas Free Tier - M0](https://www.mongodb.com/cloud/atlas).
 
 ---
 
-## 📋 Étape 1 : Pousser le projet sur votre dépôt GitHub
+## 🍃 Étape 1 : Initialiser la Base de Données MongoDB (Seeding)
+
+Pour injecter les données initiales du Hub (applications de démonstration, utilisateurs, demandes entreprises, idées d'applications à voter) dans votre base MongoDB Atlas :
+
+1. Récupérez la chaîne de connexion de votre cluster MongoDB Atlas (ex: `mongodb+srv://mon_user:mon_password@cluster0.mongodb.net/freehub`).
+2. Lancez le script de seeding intégré depuis votre terminal :
+   ```bash
+   MONGODB_URI="mongodb+srv://mon_user:mon_password@cluster0.mongodb.net/freehub" npm run seed
+   ```
+3. Le script va créer automatiquement les collections `users`, `apps`, `appideas` et `companyquoterequests` avec toutes les données de démonstration.
+
+---
+
+## 📋 Étape 2 : Pousser le projet sur votre dépôt GitHub
 
 1. Créez un nouveau dépôt sur GitHub nommé `freehub`.
 2. Poussez le code sur la branche principale (`main`) :
@@ -24,7 +37,7 @@ Ce guide vous explique étape par étape comment déployer l'application **FreeH
 
 ---
 
-## 🚀 Étape 2 : Importer le projet dans Vercel
+## 🚀 Étape 3 : Importer le projet dans Vercel
 
 1. Connectez-vous sur [Vercel Dashboard](https://vercel.com/dashboard).
 2. Cliquez sur **"Add New..."** > **"Project"**.
@@ -33,32 +46,31 @@ Ce guide vous explique étape par étape comment déployer l'application **FreeH
 
 ---
 
-## ⚙️ Étape 3 : Configurer les Variables d'Environnement dans Vercel
+## ⚙️ Étape 4 : Configurer les Variables d'Environnement dans Vercel
 
-Avant de cliquer sur **Deploy**, développez la section **Environment Variables** et ajoutez :
+Dans la section **Environment Variables** de Vercel, ajoutez :
 
-| Clé | Valeur Exemple / Recommandée | Description |
+| Clé | Exemple de Valeur | Description |
 | :--- | :--- | :--- |
 | `NEXTAUTH_SECRET` | `un_secret_tres_securise_chiffre_12345` | Clé secrète JWT NextAuth (générez avec `openssl rand -base64 32`) |
 | `NEXTAUTH_URL` | `https://votre-projet.vercel.app` | URL finale attribuée par Vercel |
-| `MONGODB_URI` | `mongodb+srv://user:pass@cluster.mongodb.net/freehub` | URL MongoDB Atlas recommandée pour la persistance complète des données |
+| `MONGODB_URI` | `mongodb+srv://mon_user:mon_password@cluster0.mongodb.net/freehub` | URL MongoDB Atlas de votre cluster |
 
 ---
 
-## 🎉 Étape 4 : Déploiement & CI/CD Automatique
+## 🎉 Étape 5 : Déploiement & CI/CD Automatique
 
 1. Cliquez sur **"Deploy"**.
-2. Vercel va compiler le projet et générer votre URL publique (ex: `https://freehub-community.vercel.app`).
+2. Vercel va installer les dépendances, exécuter le build Next.js et publier votre site en ligne.
 3. **Déploiement Continu (CI/CD)** :
-   - À chaque nouveau `git push` sur la branche `main`, Vercel redéploiera automatiquement la nouvelle version.
-   - Les Pull Requests généreront automatiquement des **Preview Deployments** avec URL de test.
-   - La GitHub Action `.github/workflows/vercel-ci.yml` exécutera le linter et vérifiera la validité du build à chaque commit.
+   - À chaque `git push` sur `main`, Vercel déploiera automatiquement la mise à jour.
+   - La GitHub Action `.github/workflows/vercel-ci.yml` vérifiera automatiquement le linter et la validité du build.
 
 ---
 
 ## 🔑 Comptes de Démonstration Préconfigurés
 
-Sur votre déploiement Vercel, vous pourrez vous connecter immédiatement avec :
+Une fois les données initialisées (`npm run seed`), vous pourrez vous connecter immédiatement avec :
 
 - **Administrateur** : `admin@freehub.fr` / Mot de passe : `Password123!`
 - **Développeur** : `dev@freehub.fr` / Mot de passe : `Password123!`
