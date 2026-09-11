@@ -4,57 +4,45 @@ Ce document analyse la pertinence du nom **"FreeHub"** et formule des recommanda
 
 ---
 
-## 🧐 1. Analyse du nom "FreeHub"
+## 🧐 1. Analyse du nom "FreeHub" & Mise à Jour de la Disponibilité
 
 ### 🎯 Points forts :
 - **Clarté immédiate** : "Free" (gratuit) + "Hub" (plateforme/catalogue rassembleur).
 - **Facile à retenir** : Nom court, dynamique et universel.
-- **Evocateur** : S'inscrit dans la lignée de plateformes communautaires célèbres (*GitHub*, *DockerHub*, *PWAHub*).
-
-### ⚠️ Points de vigilance :
-1. **Saturation de la marque "Free"** : En France, le terme "Free" est fortement associé à l'opérateur télécom Free (Iliad). Bien que la marque télécom ne bloque pas l'usage du mot anglais générique "Free" pour du logiciel open-source, cela peut créer une légère confusion ou manque d'originalité.
-2. **Nom générique très convoité** : `freehub.com` ou `freehub.io` sont souvent déjà réservés ou squattés par des courtiers en noms de domaine à des prix élevés.
+- **Évocateur** : S'inscrit dans la lignée de plateformes communautaires célèbres (*GitHub*, *DockerHub*, *PWAHub*).
 
 ---
 
-## 🌐 2. État de disponibilité des Noms de Domaine pour "FreeHub"
+## 🌐 2. Disponibilité Réelle des Noms de Domaine pour "FreeHub"
 
-Si vous souhaitez conserver le nom **FreeHub**, voici les déclinaisons de domaines recommandées :
-
-- **`freehub.fr`** : **Disponible** à l'enregistrement (~7€/an chez Gandi/OVH/Infomaniak). Idéal pour le marché français.
-- **`freehub.app`** : **Très recommandé** (~14€/an). L'extension `.app` (gérée par Google Registry) impose le HTTPS par défaut et correspond exactement à un catalogue d'applications Web/PWA.
-- **`freehub-community.org`** : **Disponible** (~12€/an). Parfait pour souligner le caractère communautaire et non-lucratif.
-- **`freehub.io`** : Généralement réservé par le secteur Tech (~35€/an).
+- ❌ **`freehub.fr`** : **Indisponible** (Déjà réservé).
+- ❌ **`freehub.app`** : **Indisponible** (Déjà réservé).
+- ❌ **`freehub.com`** : **Indisponible** (Propriété d'un courtier en nom de domaine).
+- ✅ **`freehub.store`** : **DISPONIBLE** (~2€ à 5€/an la première année sur Gandi / Namecheap / OVH).
+  - **Analyse de `freehub.store`** : Très bonne option car le terme *"store"* fait immédiatement penser à un magasin ou catalogue d'applications (type *App Store* / *Google Play Store*), ce qui renforce le positionnement de "Boutique / Catalogue d'Applications Gratuites" tout en restant ultra mémorisable.
+- ✅ **`freehub-community.org`** : **DISPONIBLE** (~12€/an). Option alternative orientée association / open-source non lucratif.
 
 ---
 
-## 💡 3. Alternatives de Noms de Marque Innovantes
+## 💡 3. Alternatives de Noms de Marque Innovantes & Totalement Libres en `.fr` / `.app`
 
-Si vous souhaitez une identité de marque plus unique, facilement déposable à l'INPI et immédiatement disponible en `.com` / `.fr` / `.app` :
+Si vous préférez absolument une extension `.fr` ou `.app` avec un nom de marque unique :
 
-### 1️⃣ **LibreHub** (*Notre Recommandation N°1*)
-- **Pourquoi ?** Référence explicite au **logiciel libre** (terme noble et sécurisant).
-- **Domaines recommandés** : `librehub.fr`, `librehub.app`, `librehub.io`.
-- **Avantages** : Excellent ancrage en France et en Europe, sonne professionnel pour les TPE/PME.
+### 1️⃣ **LibreHub** (*Recommandation N°1 pour le marché Français*)
+- **Extension disponible** : `librehub.fr` (~7€/an) & `librehub.app` (~14€/an).
+- **Pourquoi ?** Référence explicite au **logiciel libre** (terme noble et sécurisant en France et Europe).
 
 ### 2️⃣ **OpenAlt** (Open Alternatives)
-- **Pourquoi ?** Référence directe à "Open Source" + "Alternatives".
-- **Domaines recommandés** : `openalt.fr`, `openalt.app`.
-- **Avantages** : Très clair pour le marché international et les développeurs.
+- **Extension disponible** : `openalt.fr` & `openalt.app`.
+- **Pourquoi ?** Référence directe aux alternatives Open Source.
 
-### 3️⃣ **AltFree** / **FreeSwapp**
+### 3️⃣ **FreeSwapp**
+- **Extension disponible** : `freeswapp.fr` & `freeswapp.com`.
 - **Pourquoi ?** Évoque l'action d'échanger/remplacer un logiciel payant par son alternative gratuite.
-- **Domaines recommandés** : `freeswapp.com`, `freeswapp.fr`.
-
-### 4️⃣ **VibeFree** / **VibeLibre**
-- **Pourquoi ?** Fait directement écho au **Vibe Coding** et au développement assisté par agents IA.
-- **Domaines recommandés** : `vibefree.app`, `vibelibre.fr`.
 
 ---
 
 ## 🚀 Recommandation Finale pour le Lancement
 
-1. **Option Conservatrice (FreeHub)** :
-   - Réservez **`freehub.fr`** + **`freehub.app`**.
-2. **Option Marque Forte & Différenciée (LibreHub)** :
-   - Réservez **`librehub.fr`** + **`librehub.app`**.
+Si vous gardez le nom **FreeHub**, enregistrez immédiatement **`freehub.store`** (idéal pour remplacer les Stores payants).
+Si vous préférez du `.fr` / `.app`, privilégiez **`librehub.fr`** ou **`librehub.app`**.
