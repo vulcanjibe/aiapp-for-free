@@ -4,49 +4,49 @@
       "_id": "usr_admin",
       "name": "Administrateur FreeHub",
       "email": "admin@freehub.fr",
-      "password": "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      "password": "$2a$10$iIAtM4g1/K2U8038A6A4nOTY5S.bVqK1k8R.2L42d93eJv1J/CqOq",
       "role": "admin",
       "isApprovedDeveloper": true,
-      "createdAt": "2026-09-09T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "usr_dev1",
       "name": "Thomas Dev",
       "email": "dev@freehub.fr",
-      "password": "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      "password": "$2a$10$iIAtM4g1/K2U8038A6A4nOTY5S.bVqK1k8R.2L42d93eJv1J/CqOq",
       "role": "developer",
       "isApprovedDeveloper": true,
-      "createdAt": "2026-09-09T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "usr_dev2",
       "name": "Sophie OpenSource",
       "email": "sophie@freehub.fr",
-      "password": "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      "password": "$2a$10$iIAtM4g1/K2U8038A6A4nOTY5S.bVqK1k8R.2L42d93eJv1J/CqOq",
       "role": "developer",
       "isApprovedDeveloper": true,
-      "createdAt": "2026-09-09T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "usr_user1",
       "name": "Jean Utilisateur",
       "email": "user@freehub.fr",
-      "password": "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      "password": "$2a$10$iIAtM4g1/K2U8038A6A4nOTY5S.bVqK1k8R.2L42d93eJv1J/CqOq",
       "role": "user",
-      "createdAt": "2026-09-09T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "usr_company1",
       "name": "Entreprise Innov",
       "email": "contact@entreprise.fr",
-      "password": "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      "password": "$2a$10$iIAtM4g1/K2U8038A6A4nOTY5S.bVqK1k8R.2L42d93eJv1J/CqOq",
       "role": "company",
-      "createdAt": "2026-09-09T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     }
   ],
   "apps": [
@@ -96,8 +96,8 @@
       },
       "viewsCount": 1420,
       "clicksCount": 380,
-      "createdAt": "2026-08-30T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-08-30T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "app_2",
@@ -141,8 +141,8 @@
       },
       "viewsCount": 980,
       "clicksCount": 240,
-      "createdAt": "2026-09-01T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-01T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "app_3",
@@ -162,7 +162,7 @@
         "Banque de modèles gratuits",
         "PWA Installable"
       ],
-      "githubUrl": "https://github.com/freehub-community/designcraft",
+      githubUrl: "https://github.com/freehub-community/designcraft",
       "techStack": [
         "Next.js",
         "Canvas API",
@@ -186,8 +186,8 @@
       },
       "viewsCount": 2100,
       "clicksCount": 610,
-      "createdAt": "2026-09-04T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-04T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "app_4",
@@ -205,7 +205,7 @@
         "Auto-synthèse IA",
         "Prise de note vocale"
       ],
-      "githubUrl": "https://github.com/freehub-community/appflow-notes-ai-fork",
+      githubUrl: "https://github.com/freehub-community/appflow-notes-ai-fork",
       "techStack": [
         "Next.js",
         "Python",
@@ -229,8 +229,8 @@
       },
       "viewsCount": 450,
       "clicksCount": 120,
-      "createdAt": "2026-09-06T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-06T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
       "_id": "app_5",
@@ -249,7 +249,7 @@
         "Journal d'entraînement",
         "Suivi du poids"
       ],
-      "githubUrl": "https://github.com/freehub-community/fittracker",
+      githubUrl: "https://github.com/freehub-community/fittracker",
       "techStack": [
         "React Native Web",
         "TypeScript",
@@ -272,8 +272,8 @@
       },
       "viewsCount": 50,
       "clicksCount": 12,
-      "createdAt": "2026-09-08T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-08T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     }
   ],
   "ideas": [
@@ -290,11 +290,11 @@
         "usr_user1"
       ],
       "status": "open",
-      "createdAt": "2026-09-02T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-02T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     },
     {
-      "_id": "idea_2",
+      _id: "idea_2",
       "title": "Alternative à Slack / Discord Pro",
       "paidAppName": "Slack Pro",
       "description": "Messagerie d'équipe temps réel avec recherche illimitée dans l'historique et canaux thématiques.",
@@ -306,8 +306,8 @@
         "usr_user1"
       ],
       "status": "in_development",
-      "createdAt": "2026-08-28T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-08-28T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     }
   ],
   "companyRequests": [
@@ -322,8 +322,8 @@
       "approximateAnnualCost": "12 000 € / an",
       "projectDescription": "Nous cherchons à porter notre outil interne de gestion des tournées de livraison sur une alternative web/PWA développée via Vibe Coding pour réduire nos frais récurrents.",
       "status": "new",
-      "createdAt": "2026-09-07T20:29:24.273Z",
-      "updatedAt": "2026-09-09T20:29:24.273Z"
+      "createdAt": "2026-09-07T19:00:00.000Z",
+      "updatedAt": "2026-09-09T19:00:00.000Z"
     }
   ]
 }

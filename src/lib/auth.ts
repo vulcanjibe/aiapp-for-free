@@ -27,9 +27,7 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Identifiants incorrects");
         }
 
-        const isValid =
-          credentials.password === "Password123!" ||
-          (await bcrypt.compare(credentials.password, user.password));
+        const isValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isValid) {
           throw new Error("Identifiants incorrects");

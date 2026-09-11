@@ -89,7 +89,8 @@ export interface IDataStore {
   companyRequests: ICompanyQuoteRequestStore[];
 }
 
-const DATA_FILE = path.join(process.cwd(), "data-store.json");
+// BCRYPT HASHES for demo accounts password 'Password123!'
+const DEMO_PASSWORD_HASH = "$2a$10$iIAtM4g1/K2U8038A6A4nOTY5S.bVqK1k8R.2L42d93eJv1J/CqOq";
 
 const initialSeedData: IDataStore = {
   users: [
@@ -97,7 +98,7 @@ const initialSeedData: IDataStore = {
       _id: "usr_admin",
       name: "Administrateur FreeHub",
       email: "admin@freehub.fr",
-      password: "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      password: DEMO_PASSWORD_HASH,
       role: "admin",
       isApprovedDeveloper: true,
       createdAt: new Date().toISOString(),
@@ -107,7 +108,7 @@ const initialSeedData: IDataStore = {
       _id: "usr_dev1",
       name: "Thomas Dev",
       email: "dev@freehub.fr",
-      password: "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      password: DEMO_PASSWORD_HASH,
       role: "developer",
       isApprovedDeveloper: true,
       createdAt: new Date().toISOString(),
@@ -117,7 +118,7 @@ const initialSeedData: IDataStore = {
       _id: "usr_dev2",
       name: "Sophie OpenSource",
       email: "sophie@freehub.fr",
-      password: "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      password: DEMO_PASSWORD_HASH,
       role: "developer",
       isApprovedDeveloper: true,
       createdAt: new Date().toISOString(),
@@ -127,7 +128,7 @@ const initialSeedData: IDataStore = {
       _id: "usr_user1",
       name: "Jean Utilisateur",
       email: "user@freehub.fr",
-      password: "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      password: DEMO_PASSWORD_HASH,
       role: "user",
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
@@ -136,7 +137,7 @@ const initialSeedData: IDataStore = {
       _id: "usr_company1",
       name: "Entreprise Innov",
       email: "contact@entreprise.fr",
-      password: "$2a$10$wTInaG8N4y3l3tA3YwG9/e8w6Q0d9H0A9W8Z8Y7X6W5V4U3T2S1R0",
+      password: DEMO_PASSWORD_HASH,
       role: "company",
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
@@ -345,25 +346,43 @@ const initialSeedData: IDataStore = {
   ],
 };
 
+// Use /tmp directory on Serverless environments (like Vercel) where process.cwd() is read-only
+const DATA_FILE =
+  process.env.VERCEL || process.env.NODE_ENV === "production"
+    ? path.join("/tmp", "freehub-data-store.json")
+    : path.join(process.cwd(), "data-store.json");
+
+let memoryStore: IDataStore | null = null;
+
 export function getStore(): IDataStore {
+  if (memoryStore) {
+    return memoryStore;
+  }
   if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(initialSeedData, null, 2), "utf8");
+    try {
+      fs.writeFileSync(DATA_FILE, JSON.stringify(initialSeedData, null, 2), "utf8");
+    } catch {
+      // In-memory fallback
+    }
+    memoryStore = initialSeedData;
     return initialSeedData;
   }
   try {
     const raw = fs.readFileSync(DATA_FILE, "utf8");
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error("Error reading store:", err);
+    memoryStore = JSON.parse(raw);
+    return memoryStore!;
+  } catch {
+    memoryStore = initialSeedData;
     return initialSeedData;
   }
 }
 
 export function saveStore(data: IDataStore) {
+  memoryStore = data;
   try {
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf8");
   } catch (err) {
-    console.error("Error writing store:", err);
+    console.warn("Write store warning (read-only filesystem):", err);
   }
 }
 

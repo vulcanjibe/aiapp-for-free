@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/freehub";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 interface MongooseCache {
   conn: typeof mongoose | null;
@@ -20,6 +20,10 @@ if (!cached) {
 }
 
 export async function connectToDatabase() {
+  if (!MONGODB_URI) {
+    throw new Error("MONGODB_URI is not defined");
+  }
+
   if (cached!.conn) {
     return cached!.conn;
   }
@@ -27,6 +31,7 @@ export async function connectToDatabase() {
   if (!cached!.promise) {
     const opts = {
       bufferCommands: false,
+      serverSelectionTimeoutMS: 1500, // Fast fail to store fallback if MongoDB is not reachable
     };
 
     cached!.promise = mongoose.connect(MONGODB_URI, opts).then((m) => {
